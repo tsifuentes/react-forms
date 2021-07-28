@@ -8,19 +8,27 @@ export default class ControlledForm extends React.Component {
 
                 <h3>Showing controlled form elements</h3>
                 <label>
-                    <div>Name:</div>
-                    <input type="text" value="Thomas"/>
+                    <div>ID (No Editable Value):</div>
+                    <input type="text" value="45608569"/>
                 </label>
                 <label>
-                    <div>Last Name:</div>
-                    <input type="text" value="Sifuentes"/>
+                    <div>Passport ID (No Editable Value empty):</div>
+                    <input type="text" value=""/>
                 </label>
                 <label>
-                    <div>Bio:</div>
-                    <textarea value="I am a Systems Engineer who loves Web Technologies..."/>
+                    <div>Name (editable null):</div>
+                    <input type="text" value={null}/>
                 </label>
                 <label>
-                    <div>Occupation:</div>
+                    <div>Last Name (editable undefined):</div>
+                    <input type="text" value={undefined}/>
+                </label>
+                <label>
+                    <div>Bio (editable - no value):</div>
+                    <textarea/>
+                </label>
+                <label>
+                    <div>Occupation (autoselected no editable):</div>
                     <select value="engineer">
                         <option value="engineer">Engineer</option>
                         <option value="doctor">Doctor</option>
@@ -31,7 +39,7 @@ export default class ControlledForm extends React.Component {
                     </select>
                 </label>
                 <label>
-                    <div>Hobbies:</div>
+                    <div>Hobbies (multiple selected no editable with default value):</div>
                     <select multiple={true} value={['guitar', 'readbooks']}>
                         <option value="guitar">Play Guitar</option>
                         <option value="boxing">Boxing</option>
@@ -40,6 +48,31 @@ export default class ControlledForm extends React.Component {
                         <option value="cooking">Cooking</option>
                         <option value="drawing">Drawing</option>
                     </select>
+                </label>
+
+                <div>Favorite colors:</div>
+                <label>
+                    <input type="checkbox"/> Green
+                </label>
+                <label>
+                    <input type="checkbox"/> Yellow
+                </label>
+                <label>
+                    <input type="checkbox"/> Blue
+                </label>
+                <label>
+                    <input type="checkbox"/> Red
+                </label>
+
+                <div>Role:</div>
+                <label>
+                    <input type="radio" name="role"/>Admin
+                </label>
+                <label>
+                    <input type="radio" name="role"/>Developer
+                </label>
+                <label>
+                    <input type="radio" name="role"/>Guest
                 </label>
             </form>
         );
