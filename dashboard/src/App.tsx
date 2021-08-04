@@ -1,27 +1,32 @@
-import React from 'react';
-import './App.css';
+import { Container, Nav, NavDropdown } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Main } from './main/Main';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Topics</h2>
-        <form className="topics">
-          <a><input type="checkbox"/> Set up</a>
-          <a><input type="checkbox"/> JavaScript XML (JSX)</a>
-          <a><input type="checkbox"/> Rendering Elements</a>
-          <a><input type="checkbox"/> Components & Props</a>
-          <a><input type="checkbox"/> State & Lifecycle</a>
-          <a><input type="checkbox"/> Handling Events</a>
-          <a><input type="checkbox"/> Conditional Rendering</a>
-          <a><input type="checkbox"/> Lists & keys</a>
-          <a><input type="checkbox"/> Forms</a>
-          <a><input type="checkbox"/> Lifting State up</a>
-          <a><input type="checkbox"/> Composition vs Inheritance</a>
-          <a><input type="checkbox"/> Thinking in React</a>
-        </form>
-      </header>
-    </div>
+    <>
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">React Learning</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Topics</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Set up</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">JSX</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Forms</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Hooks</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    <Main></Main>
+    </>
   );
 }
 
